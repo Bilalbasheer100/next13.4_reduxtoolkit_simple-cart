@@ -2,6 +2,7 @@
 import React,{useState,useEffect} from 'react'
 import { useDispatch } from 'react-redux';
 import { add } from '@/Redux/Cartslice';
+import Image from 'next/image';
 
 const Homepage = () => {
   const [products ,setproducts]=useState([])
@@ -27,7 +28,7 @@ const Homepage = () => {
           {
             products.map((product)=>(
               <div key={product.id} className='card'>
-                  <img src={product.image} alt='img'/>
+                  <Image src={product.image} alt='img' width={100} height={100}/>
                   <h4>{product.title}</h4>
                   <h5>{product.price}</h5>
                   <button className='btn' onClick={()=>handleadd(product)}>Add to cart</button>

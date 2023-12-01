@@ -2,6 +2,7 @@
 import React from 'react'
 import { remove } from '@/Redux/Cartslice';
 import { useDispatch,useSelector } from 'react-redux';
+import Image from 'next/image';
 
 const Cartpage = () => {
     const dispatch=useDispatch();
@@ -20,7 +21,7 @@ const Cartpage = () => {
             {
                 cartitems.map((item)=>(
                     <div className='cartCard'>
-                        <img src={item.image} alt='img'/>
+                        <Image src={item.image} alt='img' height={50} width={50}/>
                         <h5>{item.title}</h5>
                         <h5>{item.price}</h5>
                         <button className='btn' onClick={()=>handleremove(item.id)}>Remove</button>
