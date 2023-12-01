@@ -20,7 +20,7 @@ const Cartpage = () => {
         <div className='cartWrapper'>
             {
                 cartitems.map((item)=>(
-                    <div className='cartCard'>
+                    <div className='cartCard' key={item.price}>
                         <Image src={item.image} alt='img' height={50} width={50}/>
                         <h5>{item.title}</h5>
                         <h5>{item.price}</h5>
